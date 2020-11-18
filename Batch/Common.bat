@@ -43,7 +43,7 @@ rem args: source_dir, target_dir
 setlocal enabledelayedexpansion
 
 set "s=""
-set /a lenOff=4
+set /a lenOff=0
 
 set "from=%1%"
 set "to=%2%"
