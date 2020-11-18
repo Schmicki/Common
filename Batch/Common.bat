@@ -42,8 +42,7 @@ rem args: source_dir, target_dir
 :copyAllFiles
 setlocal enabledelayedexpansion
 
-set "s=""
-set /a lenOff=0
+set /a lenOff=1
 
 set "from=%1%"
 set "to=%2%"
@@ -52,10 +51,7 @@ call :getAbsolute %from% from
 call :getAbsolute %to% to
 
 set /a length=0
-call :getLen to length
-
-echo %from%
-echo %to%
+call :getLen from length
 set /a "length=%length%-%lenOff%"
 
 for /r "%from%" %%f in (*) do (
