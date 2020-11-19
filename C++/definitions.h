@@ -2,11 +2,14 @@
 
 #include <iostream>
 
+#define out std::cout <<
+#define wout std::wcout <<
 #define el << std::endl
 #define _forceinline_ __forceinline
 
 typedef char byte;
 typedef long long llong;
+typedef unsigned char uchar;
 typedef unsigned char ubyte;
 typedef unsigned int uint;
 typedef unsigned short ushort;
