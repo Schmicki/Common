@@ -31,6 +31,14 @@ namespace conv {
 			return reinterpret_cast<T*>(this);
 		}
 	};
+
+	_forceinline_ const char* tos(bool b) {
+		return b ? "true" : "false";
+	}
+
+	_forceinline_ const wchar_t* tows(bool b) {
+		return b ? L"true" : L"false";
+	}
 }
 
 // As reference
