@@ -4,6 +4,8 @@
 
 #define out std::cout <<
 #define wout std::wcout <<
+#define space << " " <<
+#define wspace << L" " <<
 #define el << std::endl
 #define _forceinline_ __forceinline
 
@@ -17,7 +19,7 @@ typedef unsigned long ulong;
 typedef unsigned long long ullong;
 
 namespace conv {
-	class _Conv_ {
+	class Class {
 	public:
 		template <typename T>
 		_forceinline_ T& as() {
@@ -31,12 +33,20 @@ namespace conv {
 	};
 }
 
+// As reference
 template <typename T>
 _forceinline_ T& as(void* p) {
 	return *reinterpret_cast<T*>(p);
 }
 
+// As pointer
 template <typename T>
 _forceinline_ T* as_p(void* p) {
 	return reinterpret_cast<T*>(p);
+}
+
+// As const pointer
+template <typename T>
+_forceinline_ const T* as_cp(const void* p) {
+	return reinterpret_cast<const T*>(p);
 }
