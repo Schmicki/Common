@@ -2,12 +2,12 @@
 
 #include <iostream>
 
-#define out std::cout <<
-#define wout std::wcout <<
-#define space << " " <<
-#define wspace << L" " <<
+#define outc std::cout <<
+#define outw std::wcout <<
+#define spacec << " " <<
+#define spacew << L" " <<
 #define el << std::endl
-#define _forceinline_ __forceinline
+#define FORCE_INLINE __forceinline
 
 typedef char byte;
 typedef long long llong;
@@ -22,39 +22,39 @@ namespace conv {
 	class Class {
 	public:
 		template <typename T>
-		_forceinline_ T& as() {
+		FORCE_INLINE T& as() {
 			return *reinterpret_cast<T*>(this);
 		}
 
 		template <typename T>
-		_forceinline_ T* as_p() {
+		FORCE_INLINE T* as_p() {
 			return reinterpret_cast<T*>(this);
 		}
 	};
 
-	_forceinline_ const char* tos(bool b) {
+	FORCE_INLINE const char* tos(bool b) {
 		return b ? "true" : "false";
 	}
 
-	_forceinline_ const wchar_t* tows(bool b) {
+	FORCE_INLINE const wchar_t* tows(bool b) {
 		return b ? L"true" : L"false";
 	}
 }
 
 // As reference
 template <typename T>
-_forceinline_ T& as(void* p) {
+FORCE_INLINE T& as(void* p) {
 	return *reinterpret_cast<T*>(p);
 }
 
 // As pointer
 template <typename T>
-_forceinline_ T* as_p(void* p) {
+FORCE_INLINE T* as_p(void* p) {
 	return reinterpret_cast<T*>(p);
 }
 
 // As const pointer
 template <typename T>
-_forceinline_ const T* as_cp(const void* p) {
+FORCE_INLINE const T* as_cp(const void* p) {
 	return reinterpret_cast<const T*>(p);
 }
