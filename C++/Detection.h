@@ -7,11 +7,11 @@ enum D_COMPILER {
 
 
 enum D_ARCHITECTURE {
-	X86 = 1, X64, ARM32, ARM64
+	X86, X64, ARM32, ARM64
 };
 
 enum D_SYSTEM {
-	WINDOWS = 1, LINUX, ANDROID, MACOS
+	WINDOWS, LINUX, ANDROID, MACOS
 };
 
 
@@ -38,8 +38,8 @@ enum D_SYSTEM {
 
 
 #else
-
-	#error please define macros for your compiler
+	
+	#error detection could not find compiler, please implement it
 
 #endif
 
@@ -73,6 +73,10 @@ enum D_SYSTEM {
 	#define D_CONST_ARCHITECTURE D_ARCHITECTURE::ARM32
 
 
+#else
+
+	#error detection could not find architecture, please implement it
+
 #endif
 
 
@@ -104,4 +108,7 @@ enum D_SYSTEM {
 	#define D_SYSTEM_MACOS
 	#define D_CONST_SYSTEM D_SYSTEM::MACOS
 
+
+#else
+	#error detection could not find system, please implement it
 #endif
