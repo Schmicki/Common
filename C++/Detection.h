@@ -81,17 +81,9 @@ enum D_SYSTEM {
 * Detect system
 */
 
-#if defined _WIN64
+#if defined _WIN64 || _WIN32 || WIN32
 
 	#define D_SYSTEM_WINDOWS
-	#define D_SYSTEM_WINDOWS64
-	#define D_CONST_SYSTEM D_SYSTEM::WINDOWS
-
-
-#elif defined _WIN32 || WIN32
-
-	#define D_SYSTEM_WINDOWS
-	#define D_SYSTEM_WINDOWS32
 	#define D_CONST_SYSTEM D_SYSTEM::WINDOWS
 
 
