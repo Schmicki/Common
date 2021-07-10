@@ -9,6 +9,7 @@
 #define el << std::endl
 #define FORCE_INLINE __forceinline
 
+
 typedef char byte;
 typedef long long llong;
 typedef unsigned char uchar;
@@ -17,6 +18,7 @@ typedef unsigned int uint;
 typedef unsigned short ushort;
 typedef unsigned long ulong;
 typedef unsigned long long ullong;
+
 
 namespace conv {
 	class Class {
